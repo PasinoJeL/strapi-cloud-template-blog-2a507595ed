@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "casino_games",
+  "info": {
+    "singularName": "casino-game",
+    "pluralName": "casino-games",
+    "displayName": "Casino_game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag"
+    },
+    "game_review": {
+      "type": "richtext"
+    },
+    "button_title": {
+      "type": "string"
+    },
+    "game_description": {
+      "type": "text"
+    },
+    "display_order": {
+      "type": "integer"
+    },
+    "game_image_url": {
+      "type": "string"
+    },
+    "game_thumbnail_url": {
+      "type": "string"
+    },
+    "Slot_info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "slot-info.slot-info"
+    },
+    "slot_setup": {
+      "type": "component",
+      "repeatable": true,
+      "component": "slot-setup.slot-setup"
+    }
+  }
+}

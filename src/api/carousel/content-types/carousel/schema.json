@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carousels",
+  "info": {
+    "singularName": "carousel",
+    "pluralName": "carousels",
+    "displayName": "Carousel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "carousel_button": {
+      "type": "string"
+    },
+    "carousel_text": {
+      "type": "richtext"
+    },
+    "carousel_button_url": {
+      "type": "string"
+    },
+    "display_order": {
+      "type": "integer"
+    },
+    "carousel_title": {
+      "type": "string"
+    },
+    "carousel_image_url": {
+      "type": "string"
+    }
+  }
+}

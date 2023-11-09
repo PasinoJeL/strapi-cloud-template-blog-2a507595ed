@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_slot_setup_slot_setups",
+  "info": {
+    "displayName": "Slot-setup"
+  },
+  "options": {},
+  "attributes": {
+    "reels": {
+      "type": "integer"
+    },
+    "rows": {
+      "type": "integer"
+    },
+    "autoplay_option": {
+      "type": "boolean"
+    },
+    "release_date": {
+      "type": "string"
+    },
+    "mobile_version": {
+      "type": "boolean"
+    },
+    "win_bothways": {
+      "type": "boolean"
+    },
+    "min_bet": {
+      "type": "string"
+    },
+    "max_bet": {
+      "type": "string"
+    }
+  }
+}

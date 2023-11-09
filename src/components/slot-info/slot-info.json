@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_slot_info_slot_infos",
+  "info": {
+    "displayName": "Slot-info",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rtp": {
+      "type": "float"
+    },
+    "volatility": {
+      "type": "string"
+    },
+    "casino_bonus": {
+      "type": "boolean"
+    },
+    "progressive_bonus": {
+      "type": "boolean"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "max_win": {
+      "type": "string"
+    }
+  }
+}
