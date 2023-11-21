@@ -683,6 +683,7 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
     singularName: 'carousel';
     pluralName: 'carousels';
     displayName: 'Carousel';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -694,6 +695,7 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
     display_order: Attribute.Integer;
     carousel_title: Attribute.String;
     carousel_image_url: Attribute.String;
+    Description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "carousel",
     "pluralName": "carousels",
-    "displayName": "Carousel"
+    "displayName": "Carousel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,6 +29,9 @@
     },
     "carousel_image_url": {
       "type": "string"
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }
