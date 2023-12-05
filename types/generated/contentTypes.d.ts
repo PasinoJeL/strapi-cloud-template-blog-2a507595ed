@@ -688,14 +688,54 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    carousel_button: Attribute.String;
-    carousel_text: Attribute.RichText;
-    carousel_button_url: Attribute.String;
-    display_order: Attribute.Integer;
-    carousel_title: Attribute.String;
-    carousel_image_url: Attribute.String;
-    Description: Attribute.Text;
+    carousel_button: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    carousel_text: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    carousel_button_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    display_order: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    carousel_title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    carousel_image_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -711,6 +751,12 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToMany',
+      'api::carousel.carousel'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -725,22 +771,77 @@ export interface ApiCasinoGameCasinoGame extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String;
-    button_url: Attribute.String;
+    name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    button_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tags: Attribute.Relation<
       'api::casino-game.casino-game',
       'oneToOne',
       'api::tag.tag'
     >;
-    game_review: Attribute.RichText;
-    button_title: Attribute.String;
-    game_description: Attribute.Text;
-    display_order: Attribute.Integer;
-    game_image_url: Attribute.String;
-    game_thumbnail_url: Attribute.String;
-    Slot_info: Attribute.Component<'slot-info.slot-info', true>;
-    slot_setup: Attribute.Component<'slot-setup.slot-setup', true>;
+    game_review: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    button_title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    game_description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    display_order: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    game_image_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    game_thumbnail_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slot_info: Attribute.Component<'slot-info.slot-info', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slot_setup: Attribute.Component<'slot-setup.slot-setup', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -756,6 +857,12 @@ export interface ApiCasinoGameCasinoGame extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::casino-game.casino-game',
+      'oneToMany',
+      'api::casino-game.casino-game'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -770,6 +877,11 @@ export interface ApiGameGame extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -778,6 +890,12 @@ export interface ApiGameGame extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::game.game', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::game.game',
+      'oneToMany',
+      'api::game.game'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -792,8 +910,18 @@ export interface ApiTagTag extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    tag: Attribute.String;
+    tag: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     casino_games: Attribute.Relation<
       'api::tag.tag',
       'oneToOne',
@@ -806,6 +934,12 @@ export interface ApiTagTag extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::tag.tag',
+      'oneToMany',
+      'api::tag.tag'
+    >;
+    locale: Attribute.String;
   };
 }
 
