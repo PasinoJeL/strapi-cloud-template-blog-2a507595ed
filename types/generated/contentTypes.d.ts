@@ -873,7 +873,7 @@ export interface ApiCasinoGameCasinoGame extends Schema.CollectionType {
       }>;
     tags: Attribute.Relation<
       'api::casino-game.casino-game',
-      'oneToOne',
+      'oneToMany',
       'api::tag.tag'
     >;
     game_review: Attribute.RichText &
