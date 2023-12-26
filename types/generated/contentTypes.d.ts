@@ -1140,7 +1140,8 @@ export interface ApiUrlUrl extends Schema.CollectionType {
   info: {
     singularName: 'url';
     pluralName: 'urls';
-    displayName: 'url';
+    displayName: 'Url';
+    description: '';
   };
   options: {
     draftAndPublish: true;
