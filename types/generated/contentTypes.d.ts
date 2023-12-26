@@ -1135,6 +1135,29 @@ export interface ApiTranslationTranslation extends Schema.CollectionType {
   };
 }
 
+export interface ApiUrlUrl extends Schema.CollectionType {
+  collectionName: 'urls';
+  info: {
+    singularName: 'url';
+    pluralName: 'urls';
+    displayName: 'url';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    element: Attribute.String;
+    url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::url.url', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::url.url', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1158,6 +1181,7 @@ declare module '@strapi/types' {
       'api::section.section': ApiSectionSection;
       'api::tag.tag': ApiTagTag;
       'api::translation.translation': ApiTranslationTranslation;
+      'api::url.url': ApiUrlUrl;
     }
   }
 }
