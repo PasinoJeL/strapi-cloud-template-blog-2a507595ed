@@ -1146,9 +1146,24 @@ export interface ApiUrlUrl extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    element: Attribute.String;
-    url: Attribute.String;
+    element: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1156,6 +1171,12 @@ export interface ApiUrlUrl extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::url.url', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::url.url',
+      'oneToMany',
+      'api::url.url'
+    >;
+    locale: Attribute.String;
   };
 }
 
