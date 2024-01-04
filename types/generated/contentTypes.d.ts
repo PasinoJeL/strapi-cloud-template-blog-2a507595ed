@@ -981,6 +981,59 @@ export interface ApiGameGame extends Schema.SingleType {
   };
 }
 
+export interface ApiMediafileMediafile extends Schema.CollectionType {
+  collectionName: 'mediafiles';
+  info: {
+    singularName: 'mediafile';
+    pluralName: 'mediafiles';
+    displayName: 'Mediafile';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Media: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mediafile.mediafile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mediafile.mediafile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::mediafile.mediafile',
+      'oneToMany',
+      'api::mediafile.mediafile'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSectionSection extends Schema.CollectionType {
   collectionName: 'sections';
   info: {
@@ -1200,6 +1253,7 @@ declare module '@strapi/types' {
       'api::carousel.carousel': ApiCarouselCarousel;
       'api::casino-game.casino-game': ApiCasinoGameCasinoGame;
       'api::game.game': ApiGameGame;
+      'api::mediafile.mediafile': ApiMediafileMediafile;
       'api::section.section': ApiSectionSection;
       'api::tag.tag': ApiTagTag;
       'api::translation.translation': ApiTranslationTranslation;
