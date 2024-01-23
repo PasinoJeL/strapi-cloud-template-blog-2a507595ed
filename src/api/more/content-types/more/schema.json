@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mores",
+  "info": {
+    "singularName": "more",
+    "pluralName": "mores",
+    "displayName": "More"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "string"
+    },
+    "Order": {
+      "type": "integer"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

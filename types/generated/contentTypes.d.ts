@@ -1034,6 +1034,31 @@ export interface ApiMediafileMediafile extends Schema.CollectionType {
   };
 }
 
+export interface ApiMoreMore extends Schema.CollectionType {
+  collectionName: 'mores';
+  info: {
+    singularName: 'more';
+    pluralName: 'mores';
+    displayName: 'More';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Content: Attribute.String;
+    Order: Attribute.Integer;
+    Link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::more.more', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::more.more', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionSection extends Schema.CollectionType {
   collectionName: 'sections';
   info: {
@@ -1254,6 +1279,7 @@ declare module '@strapi/types' {
       'api::casino-game.casino-game': ApiCasinoGameCasinoGame;
       'api::game.game': ApiGameGame;
       'api::mediafile.mediafile': ApiMediafileMediafile;
+      'api::more.more': ApiMoreMore;
       'api::section.section': ApiSectionSection;
       'api::tag.tag': ApiTagTag;
       'api::translation.translation': ApiTranslationTranslation;
