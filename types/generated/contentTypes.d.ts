@@ -1040,15 +1040,41 @@ export interface ApiMoreMore extends Schema.CollectionType {
     singularName: 'more';
     pluralName: 'mores';
     displayName: 'More';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Name: Attribute.String;
-    Content: Attribute.String;
-    Order: Attribute.Integer;
-    Link: Attribute.String;
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Content: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Order: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Link: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1056,6 +1082,12 @@ export interface ApiMoreMore extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::more.more', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::more.more',
+      'oneToMany',
+      'api::more.more'
+    >;
+    locale: Attribute.String;
   };
 }
 
