@@ -683,6 +683,7 @@ export interface ApiBonusBonus extends Schema.CollectionType {
     singularName: 'bonus';
     pluralName: 'bonuses';
     displayName: 'Bonus';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -730,6 +731,12 @@ export interface ApiBonusBonus extends Schema.CollectionType {
       }>;
     bonus_image_url: Attribute.String &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    safari_webview: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -813,6 +820,12 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
         };
       }>;
     Description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    safari_webview: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -919,6 +932,12 @@ export interface ApiCasinoGameCasinoGame extends Schema.CollectionType {
         };
       }>;
     slot_setup: Attribute.Component<'slot-setup.slot-setup', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    safari_webview: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1070,6 +1089,12 @@ export interface ApiMoreMore extends Schema.CollectionType {
         };
       }>;
     Link: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    safari_webview: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1269,6 +1294,12 @@ export interface ApiUrlUrl extends Schema.CollectionType {
         };
       }>;
     url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    safari_webview: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
