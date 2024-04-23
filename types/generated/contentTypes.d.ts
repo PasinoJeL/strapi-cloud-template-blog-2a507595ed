@@ -848,6 +848,12 @@ export interface ApiBonusBonus extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    more_button: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -932,6 +938,12 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
         };
       }>;
     safari_webview: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    more_button: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
