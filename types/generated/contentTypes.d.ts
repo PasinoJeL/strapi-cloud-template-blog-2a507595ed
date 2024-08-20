@@ -1177,6 +1177,38 @@ export interface ApiMediafileMediafile extends Schema.CollectionType {
   };
 }
 
+export interface ApiMenuMenu extends Schema.CollectionType {
+  collectionName: 'menus';
+  info: {
+    singularName: 'menu';
+    pluralName: 'menus';
+    displayName: 'Menu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    CategoryOn: Attribute.Media;
+    CategoryOff: Attribute.Media;
+    PromotionsOn: Attribute.Media;
+    PromotionsOff: Attribute.Media;
+    HomeOn: Attribute.Media;
+    HomeOff: Attribute.Media;
+    UserOn: Attribute.Media;
+    UserOff: Attribute.Media;
+    NewsOn: Attribute.Media;
+    NewsOff: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMoreMore extends Schema.CollectionType {
   collectionName: 'mores';
   info: {
@@ -1468,6 +1500,7 @@ declare module '@strapi/types' {
       'api::casino-game.casino-game': ApiCasinoGameCasinoGame;
       'api::game.game': ApiGameGame;
       'api::mediafile.mediafile': ApiMediafileMediafile;
+      'api::menu.menu': ApiMenuMenu;
       'api::more.more': ApiMoreMore;
       'api::section.section': ApiSectionSection;
       'api::tag.tag': ApiTagTag;
