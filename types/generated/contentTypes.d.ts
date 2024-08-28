@@ -907,12 +907,6 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    carousel_button_url: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     display_order: Attribute.Integer &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -937,13 +931,19 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    safari_webview: Attribute.Boolean &
+    more_button: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    more_button: Attribute.String &
+    to_screen: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    link: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
